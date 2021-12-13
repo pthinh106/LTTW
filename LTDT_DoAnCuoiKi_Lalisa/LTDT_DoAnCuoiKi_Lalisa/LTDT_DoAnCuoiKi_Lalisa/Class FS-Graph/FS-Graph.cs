@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,17 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
         private int[,] a = new int[100, 100];
         private int[] LuuVet = new int[100];
         private int[] visited = new int[100];
-   
+        private Graph[] g = new Graph[100];
+        private int nT;
+        
+        struct Graph
+        {
+            public  int u;
+            public  int v;
+            public  int value;
+        }
+        private Graph CanhNhoNhat = new Graph();
+
         public void readMatrix(string[] array, int sodinh)
         {
             int x = 0;
@@ -208,6 +218,59 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
                 }
             }
             return TPLT;
+        }
+
+        public void visitedP(int i, int nTPLT)
+        {
+            this.visited[i] = nTPLT;
+            for (int j = 0; j < sodinh; j++)
+            {
+                if((this.visited[j]==0) && (this.a[i,j] != 0))
+                {
+                    visitedP(j, nTPLT);
+                }
+            }
+        }
+
+        public void Prim()
+        {
+            if(this.nTPLT > 1)
+            {
+                // xuat khong lien thong
+                return;
+            }
+             
+            for (int i = 0; i < sodinh; i++)
+            {
+                this.visited[i] = 0;
+            }
+            this.visited[0] = 1;
+            while(nT < sodinh - 1)
+            {
+                
+                int GTNN = 100;
+                for(int i = 0; i < sodinh; i++)
+                {
+                    if (visited[i] == 1)
+                    {
+                        for(int j = 0; j < sodinh; j++)
+                        {
+                            if (visited[j] == 0 && a[i, j] != 0 && GTNN > a[i, j])
+                            {
+                                CanhNhoNhat.u = i;
+                                CanhNhoNhat.v = j;
+                                CanhNhoNhat.value = a[i,j];
+                                GTNN = this.a[i,j];
+                            }
+                        }
+                    }
+                   
+                }
+                g[nT] = CanhNhoNhat;
+                nT++;
+                visited[CanhNhoNhat.v] = 1;
+            }
+
         }
     }
 }
