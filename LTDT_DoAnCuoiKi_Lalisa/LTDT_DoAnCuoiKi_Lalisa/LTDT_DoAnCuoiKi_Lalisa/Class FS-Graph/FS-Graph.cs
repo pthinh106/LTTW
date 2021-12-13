@@ -14,7 +14,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
         private int[,] a = new int[100, 100];
         private int[] LuuVet = new int[100];
         private int[] visited = new int[100];
-        private Graph[] g = new Graph[100];
         private int nT;
         
         struct Graph
@@ -24,6 +23,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
             public  int value;
         }
         private Graph CanhNhoNhat = new Graph();
+        private Graph[] g = new Graph[100];
 
         public void readMatrix(string[] array, int sodinh)
         {
@@ -219,25 +219,13 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
             }
             return TPLT;
         }
-
-        public void visitedP(int i, int nTPLT)
+        public string PrimMin()
         {
-            this.visited[i] = nTPLT;
-            for (int j = 0; j < sodinh; j++)
+            string kq = string.Empty;
+            this.xetLT();
+            if( this.nTPLT > 1 )
             {
-                if((this.visited[j]==0) && (this.a[i,j] != 0))
-                {
-                    visitedP(j, nTPLT);
-                }
-            }
-        }
-
-        public void Prim()
-        {
-            if(this.nTPLT > 1)
-            {
-                // xuat khong lien thong
-                return;
+                return kq;
             }
              
             for (int i = 0; i < sodinh; i++)
@@ -270,7 +258,13 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
                 nT++;
                 visited[CanhNhoNhat.v] = 1;
             }
-
+            /*int trongsotong = 0;*/
+            for(int i = 0; i < nT; i++)
+            {
+                kq+= g[i].u.ToString()+g[i].v.ToString();
+                /*trongsotong += g[i].value;*/
+            }
+            return kq;
         }
     }
 }
