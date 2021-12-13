@@ -85,12 +85,24 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             if (cbxChucNang.Text == "Duyệt BFS" || cbxChucNang.Text == "Duyệt DFS")
             {
                 pnlFS.Visible = true;
+                pnlCachDuyet.Visible = true;
+                btnDuyet.Padding = new Padding(50, 0, 40, 0);
+            }
+            else 
+            {
+                btnDuyet.Padding = new Padding(40, 0, 40, 0);
+                pnlCachDuyet.Visible = false;
+                pnlFS.Visible = false;
+            }
+            if(cbxChucNang.Text == "Prim" || cbxChucNang.Text == "Kruskal" || cbxChucNang.Text == "Disjktra" && (cbxChucNang.Text != "Duyệt BFS" || cbxChucNang.Text != "Duyệt DFS"))
+            {
+                pnlCachDuyet.Visible = true;
                 btnDuyet.Padding = new Padding(50, 0, 40, 0);
             }
             else
             {
                 btnDuyet.Padding = new Padding(40, 0, 40, 0);
-                pnlFS.Visible = false;
+                pnlCachDuyet.Visible = false;
             }
             btnDuyet.Text = cbxChucNang.Text;
             Xacnhan = false;
@@ -409,15 +421,29 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             sodinhcheck = ListarrNod.Count;
             FS = string.Empty;
             FS1 = string.Empty;
+            Prim = string.Empty;
+            Kruskal = string.Empty;
             dem = 0;
             btncreate = null;
             Dothi.readGRAPH(Matrix, sodinh);
             DuyetGraph();
+            Egl = new List<Class_FS_Graph.Egde> { };
             if (FS != string.Empty)
             {
                 getDD(FS);
+                i = FS.Length - 1;
             }
-            i = FS.Length - 1;
+            if (Prim != string.Empty)
+            {
+                getcaykhung(Prim);
+                i = 0;
+            }
+            if (Kruskal != string.Empty)
+            {
+                getcaykhung(Kruskal);
+                i = 0;
+            }
+            
             dx = dy = dx1 = dy1 = 0;
             Dinh1 = Dinh2 = -1;
             d1 = d2 = -1;
@@ -444,6 +470,105 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 MessageBox.Show("Bạn chưa vẽ đồ thị", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            //Prim
+            if (cbxChucNang.Text == "Prim" && cbxCachDuyet.Text == "Duyệt Toàn Bộ" )
+            {
+                if (Prim == string.Empty)
+                {
+                    /*txtKetqua.Text = "Không có đường đi";*/
+                    MessageBox.Show("Không có đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    string trave = "";
+                    for (int i = 0; i < Prim.Length; i=i+2)
+                    {
+                        trave += "(" + Prim[i] + "," + Prim[i + 1] + ")" + ",";
+                    }
+                    txtKetqua.Text = trave;
+                    DanhDauDuongDiTB();
+                    return;
+                }
+
+            }
+            else
+            {
+                if (cbxChucNang.Text == "Prim" && cbxCachDuyet.Text == "Duyệt Từng Bước")
+                {
+                    if (Prim == string.Empty)
+                    {
+                        MessageBox.Show("Không có đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        /*txtKetqua.Text = "Không có đường đi";*/
+                        return;
+                    }
+                    else
+                    {
+                        if (i < Prim.Length)
+                        {
+                            FS1 += "(" + Prim[i] + "," + Prim[i + 1] + ")" + ",";
+                            i = i + 2;
+                            txtKetqua.Text = FS1;
+                        }
+                        if (dem != Egl.Count)
+                        {
+                            DanhDauDuongDiTB2();
+                            dem = dem + 1;
+                        }
+                    }
+                }
+            }
+            //Kruskal
+            if (cbxChucNang.Text == "Kruskal" && cbxCachDuyet.Text == "Duyệt Toàn Bộ")
+            {
+                if (Kruskal == string.Empty)
+                {
+                    /*txtKetqua.Text = "Không có đường đi";*/
+                    MessageBox.Show("Không có đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    string trave = "";
+                    for (int i = 0; i < Kruskal.Length; i = i + 2)
+                    {
+                        trave += "(" + Kruskal[i] + "," + Kruskal[i + 1] + ")" + ",";
+                    }
+                    txtKetqua.Text = trave;
+                    DanhDauDuongDiTB();
+                    return;
+                }
+
+            }
+            else
+            {
+                if (cbxChucNang.Text == "Kruskal" && cbxCachDuyet.Text == "Duyệt Từng Bước")
+                {
+                    if (Kruskal == string.Empty)
+                    {
+                        MessageBox.Show("Không có đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        /*txtKetqua.Text = "Không có đường đi";*/
+                        return;
+                    }
+                    else
+                    {
+                        if (i < Kruskal.Length)
+                        {
+                            FS1 += "(" + Kruskal[i] + "," + Kruskal[i + 1] + ")" + ",";
+                            i = i + 2;
+                            txtKetqua.Text = FS1;
+                        }
+                        if (dem != Egl.Count)
+                        {
+                            DanhDauDuongDiTB2();
+                            dem = dem + 1;
+                        }
+                    }
+                }
+            }
+
+
+
             if (cbxChucNang.Text == "Duyệt BFS" && cbxCachDuyet.Text == "Duyệt Toàn Bộ" && txtDinhKetThuc.Text != string.Empty && txtDinhBatDau.Text != string.Empty)
             {
                 if (FS == string.Empty)
@@ -777,7 +902,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         {
             if(ListarrEgde.Count > 0)
             {
-                if (Matrix[Dinh1, Dinh2] == 1 && cbxLoaiDoThi.Text == "Đồ Thị Vô Hướng")
+                if (Matrix[Dinh1, Dinh2] != 0 && cbxLoaiDoThi.Text == "Đồ Thị Vô Hướng" && NodeG.CheckEgde())
                 {
                     Graphics dc = pnlVeDoThi.CreateGraphics();
                     if (txtTrongSo.Text != String.Empty)
@@ -803,7 +928,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                     Matrix[Dinh1, Dinh2] = NodeG.trongso;
                     Matrix[Dinh2, Dinh1] = NodeG.trongso;
                 }
-                else if (Matrix[Dinh1, Dinh2] == 1 && cbxLoaiDoThi.Text == "Đồ Thị Có Hướng" && ListarrEgde.Count > 0)
+                else if (Matrix[Dinh1, Dinh2] != 0 && cbxLoaiDoThi.Text == "Đồ Thị Có Hướng" && NodeG.CheckEgde())
                 {
                     Graphics dc = pnlVeDoThi.CreateGraphics();
                     if (txtTrongSo.Text != String.Empty)
@@ -953,17 +1078,13 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 dc.DrawLine(BlackPen, NodeG.x, NodeG.y, NodeG.z, NodeG.t);
                 int x = (NodeG.x + NodeG.z) / 2;
                 int y = (NodeG.y + NodeG.t) / 2;
-
                 SolidBrush sb = new SolidBrush(Color.FromArgb(241, 175, 0));
                 dc.FillEllipse(sb, x - 15, y - 15, 30, 30);
-
                 using (StringFormat sf = new StringFormat())
                 {
                     sf.Alignment = StringAlignment.Center;
                     sf.LineAlignment = StringAlignment.Center;
-
                     Panel pnlDraw = new Panel();
-
                     dc.DrawString($"{NodeG.trongso}", pnlDraw.Font, new SolidBrush(Color.Black), x, y, sf);
                 }
 
@@ -1238,11 +1359,18 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                     {
                         if(cbxChucNang.Text == "Kruskal")
                         {
-                            /*Prim = Dothi.PrimMin();
-                            MessageBox.Show(Prim);*/
-                            /*Kruskal = Dothi.Kruskal();
-                            MessageBox.Show(Kruskal);*/
-                            MessageBox.Show("Vui lòng kiểm tra lại dữ liệu đầu vào", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            Kruskal = Dothi.Kruskal();
+                        }
+                        else
+                        {
+                            if (cbxChucNang.Text == "Prim")
+                            {
+                                Prim = Dothi.PrimMin();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Vui lòng kiểm tra lại dữ liệu đầu vào", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
                     }
                     
@@ -1260,15 +1388,31 @@ namespace LTDT_DoAnCuoiKi_Lalisa
 
 
         }
+       
+
         //2. Lấy Đường Đi BFS hoặc DFS
         private void getDD(string a)
         {
             for (int i = a.Length - 1; i > 0; i--)
             {
-                Eg.x = ListarrNod[(int)(a[i] - '0')].x + 12;
+                Eg.x = ListarrNod[(int)a[i] - '0'].x + 12;
                 Eg.y = ListarrNod[(int)a[i] - '0'].y + 12;
                 Eg.z = ListarrNod[(int)a[i - 1] - '0'].x + 12;
                 Eg.t = ListarrNod[(int)a[i - 1] - '0'].y + 12;
+                Eg.trongso = Matrix[(int)a[i], (int)a[i - 1]];
+                Egl.Add(Eg);
+                Eg = new Class_FS_Graph.Egde();
+            }
+        }
+        private void getcaykhung(string a)
+        {
+            for (int i = 0; i < a.Length; i=i+2)
+            {
+                Eg.x = ListarrNod[(int)a[i] - '0'].x + 12;
+                Eg.y = ListarrNod[(int)a[i] - '0'].y + 12;
+                Eg.z = ListarrNod[(int)a[i + 1] - '0'].x + 12;
+                Eg.t = ListarrNod[(int)a[i + 1] - '0'].y + 12;
+                Eg.trongso = Matrix[(int)a[i]-'0',(int)a[i + 1]-'0'];
                 Egl.Add(Eg);
                 Eg = new Class_FS_Graph.Egde();
             }

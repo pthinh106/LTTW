@@ -25,15 +25,8 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
         }
         private Graph CanhNhoNhat = new Graph();
         private Graph[] g = new Graph[100];
-        //////////////////////////////////
-        struct CANH
-        {
-            public int u;
-            public int v;
-            public int value1;
-        }
-        private CANH[] T= new CANH[100];
-        CANH[] DSCanh = new CANH[100];
+        private Graph[] T= new Graph[100];
+        Graph[] DSCanh = new Graph[100];
         public void readMatrix(string[] array, int sodinh)
         {
             int x = 0;
@@ -244,7 +237,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
             this.visited[0] = 1;
             while(nT < sodinh - 1)
             {
-                
                 int GTNN = 100;
                 for(int i = 0; i < sodinh; i++)
                 {
@@ -277,12 +269,12 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
         }
         public void SapXepCach()
         {
-            CANH canhtam = new CANH();
-            for(int i = 0; i < tongsocanh; i++)
+            Graph canhtam = new Graph();
+            for(int i = 0; i < tongsocanh-1; i++)
             {
                 for(int j=i+1;j < tongsocanh; j++)
                 {
-                    if(DSCanh[i].value1 > DSCanh[j].value1)
+                    if(DSCanh[i].value > DSCanh[j].value)
                     {
                         canhtam = DSCanh[i];
                         DSCanh[i] = DSCanh[j];

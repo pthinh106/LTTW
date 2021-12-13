@@ -30,19 +30,18 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnLamMoi = new FontAwesome.Sharp.IconButton();
-            this.btnDuyet = new FontAwesome.Sharp.IconButton();
             this.panelClickSukien = new System.Windows.Forms.Panel();
             this.btnXacNhan = new FontAwesome.Sharp.IconButton();
             this.btnXoaDinh = new FontAwesome.Sharp.IconButton();
             this.btnXoaCanh = new FontAwesome.Sharp.IconButton();
             this.btnThemCanh = new FontAwesome.Sharp.IconButton();
             this.btnThemDinh = new FontAwesome.Sharp.IconButton();
-            this.pnlFS = new System.Windows.Forms.Panel();
+            this.btnLamMoi = new FontAwesome.Sharp.IconButton();
+            this.btnDuyet = new FontAwesome.Sharp.IconButton();
+            this.pnlCachDuyet = new System.Windows.Forms.Panel();
             this.cbxCachDuyet = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.pnlFS = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDinhBatDau = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,20 +58,22 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.txtMatran = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panelClickSukien.SuspendLayout();
+            this.pnlCachDuyet.SuspendLayout();
             this.pnlFS.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panelClickSukien);
+            this.panel1.Controls.Add(this.pnlCachDuyet);
             this.panel1.Controls.Add(this.pnlFS);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -80,62 +81,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(325, 588);
             this.panel1.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(57, 561);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(233, 17);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "©Copyright 2021 HCMUE I_Lalisa_4\r\n";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnLamMoi);
-            this.panel5.Controls.Add(this.btnDuyet);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 433);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(325, 146);
-            this.panel5.TabIndex = 14;
-            // 
-            // btnLamMoi
-            // 
-            this.btnLamMoi.BackColor = System.Drawing.Color.Teal;
-            this.btnLamMoi.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnLamMoi.IconColor = System.Drawing.Color.Aquamarine;
-            this.btnLamMoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLamMoi.IconSize = 25;
-            this.btnLamMoi.Location = new System.Drawing.Point(35, 19);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Padding = new System.Windows.Forms.Padding(23, 0, 23, 0);
-            this.btnLamMoi.Size = new System.Drawing.Size(241, 49);
-            this.btnLamMoi.TabIndex = 1;
-            this.btnLamMoi.Text = "Xóa Và Tạo Mới";
-            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
-            // 
-            // btnDuyet
-            // 
-            this.btnDuyet.BackColor = System.Drawing.Color.Teal;
-            this.btnDuyet.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.btnDuyet.IconColor = System.Drawing.Color.GreenYellow;
-            this.btnDuyet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDuyet.IconSize = 25;
-            this.btnDuyet.Location = new System.Drawing.Point(35, 74);
-            this.btnDuyet.Name = "btnDuyet";
-            this.btnDuyet.Padding = new System.Windows.Forms.Padding(46, 0, 23, 0);
-            this.btnDuyet.Size = new System.Drawing.Size(241, 49);
-            this.btnDuyet.TabIndex = 0;
-            this.btnDuyet.Text = "Duyệt";
-            this.btnDuyet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDuyet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDuyet.UseVisualStyleBackColor = false;
-            this.btnDuyet.Click += new System.EventHandler(this.btnDuyet_Click);
             // 
             // panelClickSukien
             // 
@@ -145,9 +90,9 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.panelClickSukien.Controls.Add(this.btnThemCanh);
             this.panelClickSukien.Controls.Add(this.btnThemDinh);
             this.panelClickSukien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelClickSukien.Location = new System.Drawing.Point(0, 232);
+            this.panelClickSukien.Location = new System.Drawing.Point(0, 244);
             this.panelClickSukien.Name = "panelClickSukien";
-            this.panelClickSukien.Size = new System.Drawing.Size(325, 201);
+            this.panelClickSukien.Size = new System.Drawing.Size(325, 176);
             this.panelClickSukien.TabIndex = 13;
             // 
             // btnXacNhan
@@ -250,20 +195,52 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.btnThemDinh.UseVisualStyleBackColor = true;
             this.btnThemDinh.Click += new System.EventHandler(this.btnThemDinh_Click);
             // 
-            // pnlFS
+            // btnLamMoi
             // 
-            this.pnlFS.Controls.Add(this.cbxCachDuyet);
-            this.pnlFS.Controls.Add(this.label6);
-            this.pnlFS.Controls.Add(this.label2);
-            this.pnlFS.Controls.Add(this.txtDinhBatDau);
-            this.pnlFS.Controls.Add(this.label3);
-            this.pnlFS.Controls.Add(this.txtDinhKetThuc);
-            this.pnlFS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFS.Location = new System.Drawing.Point(0, 122);
-            this.pnlFS.Name = "pnlFS";
-            this.pnlFS.Size = new System.Drawing.Size(325, 110);
-            this.pnlFS.TabIndex = 13;
-            this.pnlFS.Visible = false;
+            this.btnLamMoi.BackColor = System.Drawing.Color.Teal;
+            this.btnLamMoi.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnLamMoi.IconColor = System.Drawing.Color.Aquamarine;
+            this.btnLamMoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLamMoi.IconSize = 25;
+            this.btnLamMoi.Location = new System.Drawing.Point(45, 6);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Padding = new System.Windows.Forms.Padding(23, 0, 23, 0);
+            this.btnLamMoi.Size = new System.Drawing.Size(241, 49);
+            this.btnLamMoi.TabIndex = 1;
+            this.btnLamMoi.Text = "Xóa Và Tạo Mới";
+            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
+            // btnDuyet
+            // 
+            this.btnDuyet.BackColor = System.Drawing.Color.Teal;
+            this.btnDuyet.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnDuyet.IconColor = System.Drawing.Color.GreenYellow;
+            this.btnDuyet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDuyet.IconSize = 25;
+            this.btnDuyet.Location = new System.Drawing.Point(45, 61);
+            this.btnDuyet.Name = "btnDuyet";
+            this.btnDuyet.Padding = new System.Windows.Forms.Padding(46, 0, 23, 0);
+            this.btnDuyet.Size = new System.Drawing.Size(241, 49);
+            this.btnDuyet.TabIndex = 0;
+            this.btnDuyet.Text = "Duyệt";
+            this.btnDuyet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDuyet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDuyet.UseVisualStyleBackColor = false;
+            this.btnDuyet.Click += new System.EventHandler(this.btnDuyet_Click);
+            // 
+            // pnlCachDuyet
+            // 
+            this.pnlCachDuyet.Controls.Add(this.cbxCachDuyet);
+            this.pnlCachDuyet.Controls.Add(this.label6);
+            this.pnlCachDuyet.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlCachDuyet.Location = new System.Drawing.Point(0, 200);
+            this.pnlCachDuyet.Name = "pnlCachDuyet";
+            this.pnlCachDuyet.Size = new System.Drawing.Size(325, 44);
+            this.pnlCachDuyet.TabIndex = 14;
+            this.pnlCachDuyet.Visible = false;
             // 
             // cbxCachDuyet
             // 
@@ -272,7 +249,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.cbxCachDuyet.Items.AddRange(new object[] {
             "Duyệt Từng Bước",
             "Duyệt Toàn Bộ"});
-            this.cbxCachDuyet.Location = new System.Drawing.Point(112, 76);
+            this.cbxCachDuyet.Location = new System.Drawing.Point(112, 7);
             this.cbxCachDuyet.Name = "cbxCachDuyet";
             this.cbxCachDuyet.Size = new System.Drawing.Size(164, 25);
             this.cbxCachDuyet.TabIndex = 14;
@@ -281,11 +258,24 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 76);
+            this.label6.Location = new System.Drawing.Point(7, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 17);
             this.label6.TabIndex = 15;
             this.label6.Text = "Cách Duyệt";
+            // 
+            // pnlFS
+            // 
+            this.pnlFS.Controls.Add(this.label2);
+            this.pnlFS.Controls.Add(this.txtDinhBatDau);
+            this.pnlFS.Controls.Add(this.label3);
+            this.pnlFS.Controls.Add(this.txtDinhKetThuc);
+            this.pnlFS.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFS.Location = new System.Drawing.Point(0, 122);
+            this.pnlFS.Name = "pnlFS";
+            this.pnlFS.Size = new System.Drawing.Size(325, 78);
+            this.pnlFS.TabIndex = 13;
+            this.pnlFS.Visible = false;
             // 
             // label2
             // 
@@ -455,6 +445,16 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Báo";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnDuyet);
+            this.panel2.Controls.Add(this.btnLamMoi);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 420);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(325, 120);
+            this.panel2.TabIndex = 15;
+            // 
             // FormGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -469,15 +469,16 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.Name = "FormGraph";
             this.Text = "FormGraph";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel5.ResumeLayout(false);
             this.panelClickSukien.ResumeLayout(false);
+            this.pnlCachDuyet.ResumeLayout(false);
+            this.pnlCachDuyet.PerformLayout();
             this.pnlFS.ResumeLayout(false);
             this.pnlFS.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -503,7 +504,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         private FontAwesome.Sharp.IconButton btnXoaDinh;
         private FontAwesome.Sharp.IconButton btnXoaCanh;
         private FontAwesome.Sharp.IconButton btnThemCanh;
-        private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconButton btnDuyet;
         private System.Windows.Forms.Panel pnlFS;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -511,8 +511,9 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         private FontAwesome.Sharp.IconButton btnLamMoi;
         private System.Windows.Forms.TextBox txtMatran;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTrongSo;
+        private System.Windows.Forms.Panel pnlCachDuyet;
+        private System.Windows.Forms.Panel panel2;
     }
 }
