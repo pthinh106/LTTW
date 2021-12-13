@@ -30,7 +30,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
         {
             public int u;
             public int v;
-            public int value;
+            public int value1;
         }
         private CANH[] T= new CANH[100];
         CANH[] DSCanh = new CANH[100];
@@ -282,7 +282,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
             {
                 for(int j=i+1;j < tongsocanh; j++)
                 {
-                    if(DSCanh[i].value > DSCanh[j].value)
+                    if(DSCanh[i].value1 > DSCanh[j].value1)
                     {
                         canhtam = DSCanh[i];
                         DSCanh[i] = DSCanh[j];
@@ -291,13 +291,14 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
                 }
             }
         }
-        public void Kruskal()
+        public string Kruskal()
         {
+            string kq = string.Empty;
             int _nT = 0;
             int[] Nhan = new int[100];
             for (int i = 0; i < this.sodinh; i++)
             {
-                for (int j = 0; j < this.sodinh; i++)
+                for (int j = 0; j < this.sodinh; j++)
                 {
                     if (this.a[i, j] > 0)
                     {
@@ -338,17 +339,19 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
             }
             if(_nT != this.sodinh-1)
             {
-                // do thi ko lien thong
+                return kq;
             }
             else
             {
                 for (int i = 0; i < _nT; i++)
                 {
+                    kq += T[i].u.ToString() + T[i].v.ToString();
                     // cout << T[i].u << T[i].v;
                     /*
                     TongTrongSoCuaCayKhung += T[i].value;*/
                 }
             }
+            return kq;
         }
     }
 }

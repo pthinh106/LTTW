@@ -32,6 +32,8 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         private LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph.FS_Graph Dothi = new Class_FS_Graph.FS_Graph();
         private string FS = string.Empty;
         private string FS1 = string.Empty;
+        private string Prim = string.Empty;
+        private string Kruskal = string.Empty;
         private string[] TPLT = new string[] { };
         private int i = 0;
         private int dem = 0;
@@ -638,6 +640,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                     return;
                 }
             }
+
             
         }
         //9. Button Tạo Mới Và Xóa
@@ -1233,8 +1236,16 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                     }
                     else
                     {
-                        MessageBox.Show("Vui lòng kiểm tra lại dữ liệu đầu vào", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        if(cbxChucNang.Text == "Kruskal")
+                        {
+                            /*Prim = Dothi.PrimMin();
+                            MessageBox.Show(Prim);*/
+                            /*Kruskal = Dothi.Kruskal();
+                            MessageBox.Show(Kruskal);*/
+                            MessageBox.Show("Vui lòng kiểm tra lại dữ liệu đầu vào", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
+                    
                 }
             }
             
