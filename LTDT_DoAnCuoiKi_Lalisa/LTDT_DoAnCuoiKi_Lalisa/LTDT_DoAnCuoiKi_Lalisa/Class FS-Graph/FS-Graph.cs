@@ -15,6 +15,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
         private int[] LuuVet = new int[100];
         private int[] visited = new int[100];
         private int nT;
+        private int tongsocanh = 0;
         
         struct Graph
         {
@@ -24,7 +25,15 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
         }
         private Graph CanhNhoNhat = new Graph();
         private Graph[] g = new Graph[100];
-
+        //////////////////////////////////
+        struct CANH
+        {
+            public int u;
+            public int v;
+            public int value;
+        }
+        private CANH[] T= new CANH[100];
+        CANH[] DSCanh = new CANH[100];
         public void readMatrix(string[] array, int sodinh)
         {
             int x = 0;
@@ -265,6 +274,81 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
                 /*trongsotong += g[i].value;*/
             }
             return kq;
+        }
+        public void SapXepCach()
+        {
+            CANH canhtam = new CANH();
+            for(int i = 0; i < tongsocanh; i++)
+            {
+                for(int j=i+1;j < tongsocanh; j++)
+                {
+                    if(DSCanh[i].value > DSCanh[j].value)
+                    {
+                        canhtam = DSCanh[i];
+                        DSCanh[i] = DSCanh[j];
+                        DSCanh[j] = canhtam;
+                    }
+                }
+            }
+        }
+        public void Kruskal()
+        {
+            int _nT = 0;
+            int[] Nhan = new int[100];
+            for (int i = 0; i < this.sodinh; i++)
+            {
+                for (int j = 0; j < this.sodinh; i++)
+                {
+                    if (this.a[i, j] > 0)
+                    {
+                        DSCanh[tongsocanh].u = i;
+                        DSCanh[tongsocanh].v = j;
+                        this.tongsocanh++;
+                    }
+                }
+            }
+            this.SapXepCach();
+            for(int i=0; i<this.sodinh; i++)
+            {
+                Nhan[i] = i;
+            }
+            int iMin = 0;
+            while (_nT < this.tongsocanh)
+            {
+                if (iMin < tongsocanh)
+                {
+                    if(Nhan[DSCanh[iMin].u] != Nhan[DSCanh[iMin].v])
+                    {
+                        T[_nT] = DSCanh[iMin];
+                        _nT++;
+                        int giatri = Nhan[DSCanh[iMin].v];
+                        for(int j = 0; j < this.sodinh; j++)
+                        {
+                            if (Nhan[j] == giatri)
+                                Nhan[j] = Nhan[DSCanh[iMin].u];
+
+                        }
+                    }
+                    iMin++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            if(_nT != this.sodinh-1)
+            {
+                // do thi ko lien thong
+            }
+            else
+            {
+                for (int i = 0; i < _nT; i++)
+                {
+                    // cout << T[i].u << T[i].v;
+                    /*
+                    TongTrongSoCuaCayKhung += T[i].value;*/
+                }
+            }
         }
     }
 }
