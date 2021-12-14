@@ -29,7 +29,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         private int sodinh = 0;
         private int sodinhcheck = 0;
         public int[,] Matrix = new int[100, 100];
-        private LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph.FS_Graph Dothi = new Class_FS_Graph.FS_Graph();
+        private Class_FS_Graph.FS_Graph Dothi = new Class_FS_Graph.FS_Graph();
         private string FS = string.Empty;
         private string FS1 = string.Empty;
         private string Prim = string.Empty;
@@ -815,7 +815,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             PtuxoaNod = -1;
             sodinh = 0;
             Matrix = new int[100, 100];
-            LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph.FS_Graph Dothi = new Class_FS_Graph.FS_Graph();
+            Class_FS_Graph.FS_Graph Dothi = new Class_FS_Graph.FS_Graph();
             FS = string.Empty;
             FS1 = string.Empty;
             TPLT = new string[] { };
@@ -923,7 +923,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             txtKetqua.Text = dx.ToString() + " " + dy.ToString() + " " + Dinh1.ToString() + " " + dx1.ToString() + " " + dy1.ToString() + " " + Dinh2.ToString();
             if(Dinh1 != -1 && Dinh2 == -1)
             {
-                labTrongSo.Text = "Trọng số từ Đỉnh " + Dinh1.ToString();
+                labTrongSo.Text = "Trọng số từ đỉnh " + Dinh1.ToString();
             }
             else if (Dinh2 != -1 && Dinh2 != -1)
             {
@@ -934,7 +934,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         //2. Vẽ Cạnh 
         private void VeDoThi(Class_FS_Graph.Egde NodeG)
         {
-            if(ListarrEgde.Count > 0)
+            if(ListarrEgde.Count > 0 && check(Dinh1, Dinh2))
             {
                 if (Matrix[Dinh1, Dinh2] != 0 && cbxLoaiDoThi.Text == "Đồ Thị Vô Hướng" && NodeG.CheckEgde())
                 {
@@ -1420,6 +1420,11 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 TPLT = Dothi.thanhPhanLienThong();
             }*/
 
+
+        }
+
+        private void FormGraph_Load(object sender, EventArgs e)
+        {
 
         }
 

@@ -469,6 +469,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FormGraph";
             this.Text = "FormGraph";
+            this.Load += new System.EventHandler(this.FormGraph_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panelClickSukien.ResumeLayout(false);

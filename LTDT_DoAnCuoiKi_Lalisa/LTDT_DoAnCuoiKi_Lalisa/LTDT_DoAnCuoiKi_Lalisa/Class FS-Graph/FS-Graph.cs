@@ -16,7 +16,9 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
         private int[] visited = new int[100];
         private int nT;
         private int tongsocanh = 0;
-        
+        Graph[] DSCanh = new Graph[100];
+        Graph canhtam = new Graph();
+
         struct Graph
         {
             public  int u;
@@ -26,7 +28,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
         private Graph CanhNhoNhat = new Graph();
         private Graph[] g = new Graph[100];
         private Graph[] T= new Graph[100];
-        Graph[] DSCanh = new Graph[100];
+        
         public void readMatrix(string[] array, int sodinh)
         {
             int x = 0;
@@ -269,12 +271,11 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
         }
         public void SapXepCach()
         {
-            Graph canhtam = new Graph();
-            for(int i = 0; i < tongsocanh-1; i++)
+            for (int i = 0; i < tongsocanh - 1; i++)
             {
-                for(int j=i+1;j < tongsocanh; j++)
+                for (int j = i + 1; j < tongsocanh; j++)
                 {
-                    if(DSCanh[i].value > DSCanh[j].value)
+                    if (DSCanh[i].value > DSCanh[j].value)
                     {
                         canhtam = DSCanh[i];
                         DSCanh[i] = DSCanh[j];
@@ -296,30 +297,30 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
                     {
                         DSCanh[tongsocanh].u = i;
                         DSCanh[tongsocanh].v = j;
+                        DSCanh[tongsocanh].value = a[i, j];
                         this.tongsocanh++;
                     }
                 }
             }
             this.SapXepCach();
-            for(int i=0; i<this.sodinh; i++)
+            for (int i = 0; i < this.sodinh; i++)
             {
                 Nhan[i] = i;
             }
             int iMin = 0;
-            while (_nT < this.tongsocanh)
+            while (_nT < this.sodinh - 1)
             {
                 if (iMin < tongsocanh)
                 {
-                    if(Nhan[DSCanh[iMin].u] != Nhan[DSCanh[iMin].v])
+                    if (Nhan[DSCanh[iMin].u] != Nhan[DSCanh[iMin].v])
                     {
                         T[_nT] = DSCanh[iMin];
                         _nT++;
                         int giatri = Nhan[DSCanh[iMin].v];
-                        for(int j = 0; j < this.sodinh; j++)
+                        for (int j = 0; j < this.sodinh; j++)
                         {
                             if (Nhan[j] == giatri)
                                 Nhan[j] = Nhan[DSCanh[iMin].u];
-
                         }
                     }
                     iMin++;
@@ -329,7 +330,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
                     break;
                 }
             }
-            if(_nT != this.sodinh-1)
+            if (_nT != this.sodinh - 1)
             {
                 return kq;
             }
@@ -338,9 +339,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
                 for (int i = 0; i < _nT; i++)
                 {
                     kq += T[i].u.ToString() + T[i].v.ToString();
-                    // cout << T[i].u << T[i].v;
-                    /*
-                    TongTrongSoCuaCayKhung += T[i].value;*/
                 }
             }
             return kq;
