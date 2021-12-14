@@ -30,14 +30,17 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDuyet = new FontAwesome.Sharp.IconButton();
+            this.btnLamMoi = new FontAwesome.Sharp.IconButton();
             this.panelClickSukien = new System.Windows.Forms.Panel();
+            this.txtTrongSo = new System.Windows.Forms.TextBox();
+            this.labTrongSo = new System.Windows.Forms.Label();
             this.btnXacNhan = new FontAwesome.Sharp.IconButton();
             this.btnXoaDinh = new FontAwesome.Sharp.IconButton();
             this.btnXoaCanh = new FontAwesome.Sharp.IconButton();
             this.btnThemCanh = new FontAwesome.Sharp.IconButton();
             this.btnThemDinh = new FontAwesome.Sharp.IconButton();
-            this.btnLamMoi = new FontAwesome.Sharp.IconButton();
-            this.btnDuyet = new FontAwesome.Sharp.IconButton();
             this.pnlCachDuyet = new System.Windows.Forms.Panel();
             this.cbxCachDuyet = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,8 +50,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.label3 = new System.Windows.Forms.Label();
             this.txtDinhKetThuc = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTrongSo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbxChucNang = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,14 +59,13 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.txtMatran = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelClickSukien.SuspendLayout();
             this.pnlCachDuyet.SuspendLayout();
             this.pnlFS.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,136 +82,15 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.panel1.Size = new System.Drawing.Size(325, 588);
             this.panel1.TabIndex = 0;
             // 
-            // panelClickSukien
+            // panel2
             // 
-            this.panelClickSukien.Controls.Add(this.btnXacNhan);
-            this.panelClickSukien.Controls.Add(this.btnXoaDinh);
-            this.panelClickSukien.Controls.Add(this.btnXoaCanh);
-            this.panelClickSukien.Controls.Add(this.btnThemCanh);
-            this.panelClickSukien.Controls.Add(this.btnThemDinh);
-            this.panelClickSukien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelClickSukien.Location = new System.Drawing.Point(0, 244);
-            this.panelClickSukien.Name = "panelClickSukien";
-            this.panelClickSukien.Size = new System.Drawing.Size(325, 176);
-            this.panelClickSukien.TabIndex = 13;
-            // 
-            // btnXacNhan
-            // 
-            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXacNhan.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnXacNhan.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.btnXacNhan.IconColor = System.Drawing.Color.DarkSlateGray;
-            this.btnXacNhan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXacNhan.IconSize = 28;
-            this.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacNhan.Location = new System.Drawing.Point(85, 125);
-            this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Padding = new System.Windows.Forms.Padding(14, 0, 26, 2);
-            this.btnXacNhan.Size = new System.Drawing.Size(158, 42);
-            this.btnXacNhan.TabIndex = 4;
-            this.btnXacNhan.Text = "Xác Nhận";
-            this.btnXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacNhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXacNhan.UseVisualStyleBackColor = true;
-            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
-            // 
-            // btnXoaDinh
-            // 
-            this.btnXoaDinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaDinh.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnXoaDinh.IconChar = FontAwesome.Sharp.IconChar.MinusCircle;
-            this.btnXoaDinh.IconColor = System.Drawing.Color.DarkSlateGray;
-            this.btnXoaDinh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXoaDinh.IconSize = 28;
-            this.btnXoaDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaDinh.Location = new System.Drawing.Point(167, 28);
-            this.btnXoaDinh.Name = "btnXoaDinh";
-            this.btnXoaDinh.Padding = new System.Windows.Forms.Padding(9, 0, 9, 2);
-            this.btnXoaDinh.Size = new System.Drawing.Size(147, 42);
-            this.btnXoaDinh.TabIndex = 3;
-            this.btnXoaDinh.Text = "Xóa Đỉnh";
-            this.btnXoaDinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaDinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoaDinh.UseVisualStyleBackColor = true;
-            this.btnXoaDinh.Click += new System.EventHandler(this.btnXoaDinh_Click);
-            // 
-            // btnXoaCanh
-            // 
-            this.btnXoaCanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaCanh.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnXoaCanh.IconChar = FontAwesome.Sharp.IconChar.MinusCircle;
-            this.btnXoaCanh.IconColor = System.Drawing.Color.DarkSlateGray;
-            this.btnXoaCanh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXoaCanh.IconSize = 28;
-            this.btnXoaCanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaCanh.Location = new System.Drawing.Point(167, 77);
-            this.btnXoaCanh.Name = "btnXoaCanh";
-            this.btnXoaCanh.Padding = new System.Windows.Forms.Padding(9, 0, 9, 2);
-            this.btnXoaCanh.Size = new System.Drawing.Size(149, 42);
-            this.btnXoaCanh.TabIndex = 2;
-            this.btnXoaCanh.Text = "Xóa Cạnh";
-            this.btnXoaCanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaCanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoaCanh.UseVisualStyleBackColor = true;
-            this.btnXoaCanh.Click += new System.EventHandler(this.btnXoaCanh_Click);
-            // 
-            // btnThemCanh
-            // 
-            this.btnThemCanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemCanh.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThemCanh.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnThemCanh.IconColor = System.Drawing.Color.DarkSlateGray;
-            this.btnThemCanh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemCanh.IconSize = 28;
-            this.btnThemCanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemCanh.Location = new System.Drawing.Point(8, 77);
-            this.btnThemCanh.Name = "btnThemCanh";
-            this.btnThemCanh.Padding = new System.Windows.Forms.Padding(9, 0, 9, 2);
-            this.btnThemCanh.Size = new System.Drawing.Size(149, 42);
-            this.btnThemCanh.TabIndex = 1;
-            this.btnThemCanh.Text = "Thêm Cạnh";
-            this.btnThemCanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemCanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThemCanh.UseVisualStyleBackColor = true;
-            this.btnThemCanh.Click += new System.EventHandler(this.btnThemCanh_Click);
-            // 
-            // btnThemDinh
-            // 
-            this.btnThemDinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemDinh.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThemDinh.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnThemDinh.IconColor = System.Drawing.Color.DarkSlateGray;
-            this.btnThemDinh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemDinh.IconSize = 28;
-            this.btnThemDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDinh.Location = new System.Drawing.Point(8, 28);
-            this.btnThemDinh.Name = "btnThemDinh";
-            this.btnThemDinh.Padding = new System.Windows.Forms.Padding(9, 0, 9, 2);
-            this.btnThemDinh.Size = new System.Drawing.Size(149, 42);
-            this.btnThemDinh.TabIndex = 0;
-            this.btnThemDinh.Text = "Thêm Đỉnh";
-            this.btnThemDinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThemDinh.UseVisualStyleBackColor = true;
-            this.btnThemDinh.Click += new System.EventHandler(this.btnThemDinh_Click);
-            // 
-            // btnLamMoi
-            // 
-            this.btnLamMoi.BackColor = System.Drawing.Color.Teal;
-            this.btnLamMoi.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnLamMoi.IconColor = System.Drawing.Color.Aquamarine;
-            this.btnLamMoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLamMoi.IconSize = 25;
-            this.btnLamMoi.Location = new System.Drawing.Point(45, 6);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Padding = new System.Windows.Forms.Padding(23, 0, 23, 0);
-            this.btnLamMoi.Size = new System.Drawing.Size(241, 49);
-            this.btnLamMoi.TabIndex = 1;
-            this.btnLamMoi.Text = "Xóa Và Tạo Mới";
-            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            this.panel2.Controls.Add(this.btnDuyet);
+            this.panel2.Controls.Add(this.btnLamMoi);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 426);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(325, 120);
+            this.panel2.TabIndex = 15;
             // 
             // btnDuyet
             // 
@@ -231,12 +110,162 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.btnDuyet.UseVisualStyleBackColor = false;
             this.btnDuyet.Click += new System.EventHandler(this.btnDuyet_Click);
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.Teal;
+            this.btnLamMoi.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnLamMoi.IconColor = System.Drawing.Color.Aquamarine;
+            this.btnLamMoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLamMoi.IconSize = 25;
+            this.btnLamMoi.Location = new System.Drawing.Point(45, 6);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Padding = new System.Windows.Forms.Padding(23, 0, 23, 0);
+            this.btnLamMoi.Size = new System.Drawing.Size(241, 49);
+            this.btnLamMoi.TabIndex = 1;
+            this.btnLamMoi.Text = "Xóa Và Tạo Mới";
+            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
+            // panelClickSukien
+            // 
+            this.panelClickSukien.Controls.Add(this.txtTrongSo);
+            this.panelClickSukien.Controls.Add(this.labTrongSo);
+            this.panelClickSukien.Controls.Add(this.btnXacNhan);
+            this.panelClickSukien.Controls.Add(this.btnXoaDinh);
+            this.panelClickSukien.Controls.Add(this.btnXoaCanh);
+            this.panelClickSukien.Controls.Add(this.btnThemCanh);
+            this.panelClickSukien.Controls.Add(this.btnThemDinh);
+            this.panelClickSukien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelClickSukien.Location = new System.Drawing.Point(0, 207);
+            this.panelClickSukien.Name = "panelClickSukien";
+            this.panelClickSukien.Size = new System.Drawing.Size(325, 219);
+            this.panelClickSukien.TabIndex = 13;
+            // 
+            // txtTrongSo
+            // 
+            this.txtTrongSo.Location = new System.Drawing.Point(85, 35);
+            this.txtTrongSo.Name = "txtTrongSo";
+            this.txtTrongSo.Size = new System.Drawing.Size(149, 25);
+            this.txtTrongSo.TabIndex = 14;
+            // 
+            // labTrongSo
+            // 
+            this.labTrongSo.AutoSize = true;
+            this.labTrongSo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labTrongSo.Location = new System.Drawing.Point(5, 8);
+            this.labTrongSo.Name = "labTrongSo";
+            this.labTrongSo.Size = new System.Drawing.Size(65, 19);
+            this.labTrongSo.TabIndex = 15;
+            this.labTrongSo.Text = "Trọng Số";
+            // 
+            // btnXacNhan
+            // 
+            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacNhan.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnXacNhan.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            this.btnXacNhan.IconColor = System.Drawing.Color.DarkSlateGray;
+            this.btnXacNhan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXacNhan.IconSize = 28;
+            this.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXacNhan.Location = new System.Drawing.Point(86, 164);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Padding = new System.Windows.Forms.Padding(14, 0, 26, 2);
+            this.btnXacNhan.Size = new System.Drawing.Size(148, 42);
+            this.btnXacNhan.TabIndex = 4;
+            this.btnXacNhan.Text = "Xác Nhận";
+            this.btnXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXacNhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
+            // 
+            // btnXoaDinh
+            // 
+            this.btnXoaDinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaDinh.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnXoaDinh.IconChar = FontAwesome.Sharp.IconChar.MinusCircle;
+            this.btnXoaDinh.IconColor = System.Drawing.Color.DarkSlateGray;
+            this.btnXoaDinh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXoaDinh.IconSize = 28;
+            this.btnXoaDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaDinh.Location = new System.Drawing.Point(167, 67);
+            this.btnXoaDinh.Name = "btnXoaDinh";
+            this.btnXoaDinh.Padding = new System.Windows.Forms.Padding(9, 0, 9, 2);
+            this.btnXoaDinh.Size = new System.Drawing.Size(147, 42);
+            this.btnXoaDinh.TabIndex = 3;
+            this.btnXoaDinh.Text = "Xóa Đỉnh";
+            this.btnXoaDinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaDinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoaDinh.UseVisualStyleBackColor = true;
+            this.btnXoaDinh.Click += new System.EventHandler(this.btnXoaDinh_Click);
+            // 
+            // btnXoaCanh
+            // 
+            this.btnXoaCanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaCanh.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnXoaCanh.IconChar = FontAwesome.Sharp.IconChar.MinusCircle;
+            this.btnXoaCanh.IconColor = System.Drawing.Color.DarkSlateGray;
+            this.btnXoaCanh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXoaCanh.IconSize = 28;
+            this.btnXoaCanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaCanh.Location = new System.Drawing.Point(167, 116);
+            this.btnXoaCanh.Name = "btnXoaCanh";
+            this.btnXoaCanh.Padding = new System.Windows.Forms.Padding(9, 0, 9, 2);
+            this.btnXoaCanh.Size = new System.Drawing.Size(149, 42);
+            this.btnXoaCanh.TabIndex = 2;
+            this.btnXoaCanh.Text = "Xóa Cạnh";
+            this.btnXoaCanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaCanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoaCanh.UseVisualStyleBackColor = true;
+            this.btnXoaCanh.Click += new System.EventHandler(this.btnXoaCanh_Click);
+            // 
+            // btnThemCanh
+            // 
+            this.btnThemCanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemCanh.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnThemCanh.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnThemCanh.IconColor = System.Drawing.Color.DarkSlateGray;
+            this.btnThemCanh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThemCanh.IconSize = 28;
+            this.btnThemCanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemCanh.Location = new System.Drawing.Point(8, 116);
+            this.btnThemCanh.Name = "btnThemCanh";
+            this.btnThemCanh.Padding = new System.Windows.Forms.Padding(9, 0, 9, 2);
+            this.btnThemCanh.Size = new System.Drawing.Size(149, 42);
+            this.btnThemCanh.TabIndex = 1;
+            this.btnThemCanh.Text = "Thêm Cạnh";
+            this.btnThemCanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemCanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThemCanh.UseVisualStyleBackColor = true;
+            this.btnThemCanh.Click += new System.EventHandler(this.btnThemCanh_Click);
+            // 
+            // btnThemDinh
+            // 
+            this.btnThemDinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemDinh.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnThemDinh.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnThemDinh.IconColor = System.Drawing.Color.DarkSlateGray;
+            this.btnThemDinh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThemDinh.IconSize = 28;
+            this.btnThemDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemDinh.Location = new System.Drawing.Point(8, 67);
+            this.btnThemDinh.Name = "btnThemDinh";
+            this.btnThemDinh.Padding = new System.Windows.Forms.Padding(9, 0, 9, 2);
+            this.btnThemDinh.Size = new System.Drawing.Size(149, 42);
+            this.btnThemDinh.TabIndex = 0;
+            this.btnThemDinh.Text = "Thêm Đỉnh";
+            this.btnThemDinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemDinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThemDinh.UseVisualStyleBackColor = true;
+            this.btnThemDinh.Click += new System.EventHandler(this.btnThemDinh_Click);
+            // 
             // pnlCachDuyet
             // 
             this.pnlCachDuyet.Controls.Add(this.cbxCachDuyet);
             this.pnlCachDuyet.Controls.Add(this.label6);
             this.pnlCachDuyet.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlCachDuyet.Location = new System.Drawing.Point(0, 200);
+            this.pnlCachDuyet.Location = new System.Drawing.Point(0, 163);
             this.pnlCachDuyet.Name = "pnlCachDuyet";
             this.pnlCachDuyet.Size = new System.Drawing.Size(325, 44);
             this.pnlCachDuyet.TabIndex = 14;
@@ -258,7 +287,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 12);
+            this.label6.Location = new System.Drawing.Point(6, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 17);
             this.label6.TabIndex = 15;
@@ -271,7 +300,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.pnlFS.Controls.Add(this.label3);
             this.pnlFS.Controls.Add(this.txtDinhKetThuc);
             this.pnlFS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFS.Location = new System.Drawing.Point(0, 122);
+            this.pnlFS.Location = new System.Drawing.Point(0, 85);
             this.pnlFS.Name = "pnlFS";
             this.pnlFS.Size = new System.Drawing.Size(325, 78);
             this.pnlFS.TabIndex = 13;
@@ -313,8 +342,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.txtTrongSo);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.cbxChucNang);
             this.panel3.Controls.Add(this.label4);
@@ -322,24 +349,8 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(325, 122);
+            this.panel3.Size = new System.Drawing.Size(325, 85);
             this.panel3.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 89);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 17);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Trọng Số";
-            // 
-            // txtTrongSo
-            // 
-            this.txtTrongSo.Location = new System.Drawing.Point(112, 89);
-            this.txtTrongSo.Name = "txtTrongSo";
-            this.txtTrongSo.Size = new System.Drawing.Size(164, 25);
-            this.txtTrongSo.TabIndex = 14;
             // 
             // label5
             // 
@@ -445,16 +456,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Báo";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnDuyet);
-            this.panel2.Controls.Add(this.btnLamMoi);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 420);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(325, 120);
-            this.panel2.TabIndex = 15;
-            // 
             // FormGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -469,7 +470,9 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.Name = "FormGraph";
             this.Text = "FormGraph";
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelClickSukien.ResumeLayout(false);
+            this.panelClickSukien.PerformLayout();
             this.pnlCachDuyet.ResumeLayout(false);
             this.pnlCachDuyet.PerformLayout();
             this.pnlFS.ResumeLayout(false);
@@ -478,7 +481,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.panel3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -511,7 +513,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         private FontAwesome.Sharp.IconButton btnLamMoi;
         private System.Windows.Forms.TextBox txtMatran;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labTrongSo;
         private System.Windows.Forms.TextBox txtTrongSo;
         private System.Windows.Forms.Panel pnlCachDuyet;
         private System.Windows.Forms.Panel panel2;

@@ -138,6 +138,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 btncreate = null;
                 dx = dy = dx1 = dy1 = 0;
                 d1 = d2 = -1;
+                Dinh1 = Dinh2 = -1;
                 return;
             }
             if (btncreate != null)
@@ -193,6 +194,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                     btncreate = null;
                     dx = dy = dx1 = dy1 = 0;
                     d1 = d2 = -1;
+                    Dinh1 = Dinh2 = -1;
                 }
                 if (tmp > ListarrNod.Count() && cbxLoaiDoThi.Text == "Đồ Thị Có Hướng")
                 {
@@ -219,16 +221,35 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             btncreate = null;
             dx = dy = dx1 = dy1 = 0;
             d1 = d2 = -1;
+            Dinh1 = Dinh2 = -1;
         }
         //5. Button Vẽ Cạnh 
         private void btnThemCanh_Click(object sender, EventArgs e)
         {
+            if(txtTrongSo.Text == "0" && cbxChucNang.Text != "Disjktra")
+            {
+                MessageBox.Show("Trọng số bằng 0 không thể vẽ cạnh", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Egdes = new Class_FS_Graph.Egde();
+                Nod = new Class_FS_Graph.NodeGraph();
+                btncreate = null;
+                dx = dy = dx1 = dy1 = 0;
+                d1 = d2 = -1;
+                Dinh1 = Dinh2 = -1;
+                labTrongSo.Text = "Trọng Số";
+                txtTrongSo.Text = String.Empty;
+                txtKetqua.Text = "Kết Quả";
+                return;
+            }
             VeDoThi(Egdes);
             Egdes = new Class_FS_Graph.Egde();
             Nod = new Class_FS_Graph.NodeGraph();
             btncreate = null;
             dx = dy = dx1 = dy1 = 0;
             d1 = d2 = -1;
+            Dinh1 = Dinh2 = -1;
+            labTrongSo.Text = "Trọng Số";
+            txtKetqua.Text = "Kết Quả";
+            txtTrongSo.Text =String.Empty;
         }
         //6. Button Xóa Cạnh 
         private void btnXoaCanh_Click(object sender, EventArgs e)
@@ -242,6 +263,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 btncreate = null;
                 dx = dy = dx1 = dy1 = 0;
                 d1 = d2 = -1;
+                Dinh1 = Dinh2 = -1;
                 return;
             }
             if (btncreate == null)
@@ -315,6 +337,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             btncreate = null;
             dx = dy = dx1 = dy1 = 0;
             d1 = d2 = -1;
+            Dinh1 = Dinh2 = -1;
             CheckHuong = false;
         }
         //7. Button Xác Nhận Các Dữ Liệu
@@ -456,6 +479,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         {
             dx = dy = dx1 = dy1 = 0;
             d1 = d2 = -1;
+            Dinh1 = Dinh2 = -1;
             Nod = new Class_FS_Graph.NodeGraph();
             Egdes = new Class_FS_Graph.Egde();
             btncreate = null;
@@ -567,7 +591,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 }
             }
 
-
+            //FS_LT
 
             if (cbxChucNang.Text == "Duyệt BFS" && cbxCachDuyet.Text == "Duyệt Toàn Bộ" && txtDinhKetThuc.Text != string.Empty && txtDinhBatDau.Text != string.Empty)
             {
@@ -776,6 +800,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             pnlVeDoThi.Refresh();
             txtDinhBatDau.Text = string.Empty;
             txtDinhKetThuc.Text = string.Empty;
+            txtTrongSo.Text = String.Empty;
             txtKetqua.Text = "Kết Quả";
             btncreate = new Button();
             Checkiconbtn = false;
@@ -896,6 +921,15 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 Dinh2 = d2;
             }
             txtKetqua.Text = dx.ToString() + " " + dy.ToString() + " " + Dinh1.ToString() + " " + dx1.ToString() + " " + dy1.ToString() + " " + Dinh2.ToString();
+            if(Dinh1 != -1 && Dinh2 == -1)
+            {
+                labTrongSo.Text = "Trọng số từ Đỉnh " + Dinh1.ToString();
+            }
+            else if (Dinh2 != -1 && Dinh2 != -1)
+            {
+                labTrongSo.Text = "Trọng số từ đinh " + Dinh1.ToString() + " đến đỉnh " + Dinh2.ToString();
+            }
+                
         }
         //2. Vẽ Cạnh 
         private void VeDoThi(Class_FS_Graph.Egde NodeG)
@@ -1388,7 +1422,8 @@ namespace LTDT_DoAnCuoiKi_Lalisa
 
 
         }
-       
+
+        //cmt
 
         //2. Lấy Đường Đi BFS hoặc DFS
         private void getDD(string a)
