@@ -32,7 +32,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnThongTin = new FontAwesome.Sharp.IconButton();
-            this.btnMatrix = new FontAwesome.Sharp.IconButton();
             this.btnGraph = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.logoHCMUE = new System.Windows.Forms.PictureBox();
@@ -45,11 +44,9 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.iconcurrentChildform = new FontAwesome.Sharp.IconPictureBox();
             this.pnlShadow = new System.Windows.Forms.Panel();
             this.pnlDesktop = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoHCMUE)).BeginInit();
@@ -67,7 +64,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panelMenu.Controls.Add(this.btnThongTin);
-            this.panelMenu.Controls.Add(this.btnMatrix);
             this.panelMenu.Controls.Add(this.btnGraph);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -88,7 +84,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.btnThongTin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThongTin.IconSize = 32;
             this.btnThongTin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongTin.Location = new System.Drawing.Point(0, 300);
+            this.btnThongTin.Location = new System.Drawing.Point(0, 231);
             this.btnThongTin.Name = "btnThongTin";
             this.btnThongTin.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
             this.btnThongTin.Size = new System.Drawing.Size(257, 69);
@@ -98,29 +94,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.btnThongTin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThongTin.UseVisualStyleBackColor = true;
             this.btnThongTin.Click += new System.EventHandler(this.btnThongTin_Click);
-            // 
-            // btnMatrix
-            // 
-            this.btnMatrix.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMatrix.FlatAppearance.BorderSize = 0;
-            this.btnMatrix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMatrix.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMatrix.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnMatrix.IconChar = FontAwesome.Sharp.IconChar.BorderAll;
-            this.btnMatrix.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnMatrix.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMatrix.IconSize = 32;
-            this.btnMatrix.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMatrix.Location = new System.Drawing.Point(0, 231);
-            this.btnMatrix.Name = "btnMatrix";
-            this.btnMatrix.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
-            this.btnMatrix.Size = new System.Drawing.Size(257, 69);
-            this.btnMatrix.TabIndex = 2;
-            this.btnMatrix.Text = "Ma Trận";
-            this.btnMatrix.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMatrix.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMatrix.UseVisualStyleBackColor = true;
-            this.btnMatrix.Click += new System.EventHandler(this.btnMatrix_Click);
             // 
             // btnGraph
             // 
@@ -271,27 +244,14 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             // pnlDesktop
             // 
             this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.pnlDesktop.Controls.Add(this.label9);
-            this.pnlDesktop.Controls.Add(this.label3);
-            this.pnlDesktop.Controls.Add(this.label2);
             this.pnlDesktop.Controls.Add(this.label1);
             this.pnlDesktop.Controls.Add(this.pictureBox1);
+            this.pnlDesktop.Controls.Add(this.label3);
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDesktop.Location = new System.Drawing.Point(257, 77);
             this.pnlDesktop.Name = "pnlDesktop";
             this.pnlDesktop.Size = new System.Drawing.Size(1007, 604);
             this.pnlDesktop.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(801, 580);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(194, 15);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "©Copyright 2021 HCMUE I_Lalisa_4\r\n";
             // 
             // label3
             // 
@@ -301,40 +261,29 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.label3.Size = new System.Drawing.Size(0, 15);
             this.label3.TabIndex = 3;
             // 
-            // label2
+            // pictureBox1
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label2.Location = new System.Drawing.Point(238, 384);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(621, 100);
-            this.label2.TabIndex = 2;
-            this.label2.Text = resources.GetString("label2.Text");
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::LTDT_DoAnCuoiKi_Lalisa.Properties.Resources.CNTT;
+            this.pictureBox1.Location = new System.Drawing.Point(345, 85);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(303, 243);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label1.Location = new System.Drawing.Point(237, 345);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(222, 343);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(563, 33);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Đại Học Sư Phạm Thành Phố Hồ Chí Minh";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::LTDT_DoAnCuoiKi_Lalisa.Properties.Resources.Logo_HCMUP;
-            this.pictureBox1.Location = new System.Drawing.Point(281, 79);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(492, 263);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.label1.Size = new System.Drawing.Size(559, 62);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "                Khoa Công Nghệ Thông Tin\r\nMô Phỏng Các Thuật Toán của Lý Thuyết Đ" +
+    "ồ Thị\r\n";
             // 
             // Form1
             // 
@@ -377,7 +326,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton btnGraph;
         private System.Windows.Forms.Panel panelLogo;
-        private FontAwesome.Sharp.IconButton btnMatrix;
         private FontAwesome.Sharp.IconButton btnThongTin;
         private System.Windows.Forms.Panel pnlTittle;
         private System.Windows.Forms.PictureBox logoHCMUE;
@@ -389,11 +337,9 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         private FontAwesome.Sharp.IconPictureBox btnhide;
         private System.Windows.Forms.Panel pnlShadow;
         private System.Windows.Forms.Panel pnlDesktop;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

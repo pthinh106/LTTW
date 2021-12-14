@@ -113,7 +113,6 @@ C:\Thinh\LTTW\LTTW\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi
 C:\Thinh\LTTW\LTTW\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\obj\Debug\LTDT_DoAnCuoiKi_Lalisa.csproj.SuggestedBindingRedirects.cache
 C:\Thinh\LTTW\LTTW\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\obj\Debug\LTDT_DoAnCuoiKi_Lalisa.Form1.resources
 C:\Thinh\LTTW\LTTW\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\obj\Debug\LTDT_DoAnCuoiKi_Lalisa.FormGraph.resources
-C:\Thinh\LTTW\LTTW\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\obj\Debug\LTDT_DoAnCuoiKi_Lalisa.FormMatrix.resources
 C:\Thinh\LTTW\LTTW\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\obj\Debug\LTDT_DoAnCuoiKi_Lalisa.Properties.Resources.resources
 C:\Thinh\LTTW\LTTW\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\obj\Debug\LTDT_DoAnCuoiKi_Lalisa.ThongTinSanPham.resources
 C:\Thinh\LTTW\LTTW\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\LTDT_DoAnCuoiKi_Lalisa\obj\Debug\LTDT_DoAnCuoiKi_Lalisa.csproj.GenerateResource.cache

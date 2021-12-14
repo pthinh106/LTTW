@@ -64,12 +64,6 @@
     <Compile Include="FormGraph.Designer.cs">
       <DependentUpon>FormGraph.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMatrix.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMatrix.Designer.cs">
-      <DependentUpon>FormMatrix.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -88,9 +82,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGraph.resx">
       <DependentUpon>FormGraph.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMatrix.resx">
-      <DependentUpon>FormMatrix.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

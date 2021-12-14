@@ -107,13 +107,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             panelMenu.BorderStyle = BorderStyle.FixedSingle;
         }
 
-        private void btnMatrix_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBcolors.color2);
-            openChildForm(new FormMatrix());
-            panelMenu.BorderStyle = BorderStyle.FixedSingle;
-        }
-
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]

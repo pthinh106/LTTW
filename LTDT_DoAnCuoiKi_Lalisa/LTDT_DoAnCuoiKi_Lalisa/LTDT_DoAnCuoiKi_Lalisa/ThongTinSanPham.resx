@@ -117,20 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label13.Text" xml:space="preserve">
-    <value>        Chương trình là sản phẩm của đồ án kết thúc học phần môn Lý thuyết đồ thị và ứng dụng  học kỳ 1 năm học 2021-2022 dưới sự hướng dẫn
- của hai giảng viên gồm Thạc sĩ Lương Trần Ngọc Khiết và Tiến sĩ Nguyễn Viết Hưng của trường Đại học Sư phạm Thành phố Hồ Chí Minh.</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>        Chương trình mô phỏng giao diện các thuật toán tìm thành phần liên thông, duyệt cây khung theo chiều rộng (BFS), duyệt cây khung 
-theo chiều sâu (DFS) giúp cho người dùng có cái nhìn trực quan hơn về 3 thuật toán trên trong học phần Lý thuyết đồ thị và ứng dụng.</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>       Các thành viên trong nhóm thực hiện gồm:
-                1. Nguyễn Phước Thịnh - 46.01.104.176
-                2. Nguyễn Huỳnh Thị Tuyết My - 46.01.104.109
-                3. Khổng Tín Hào - 46.01.104.048
-                4. Dư Thị Như Quỳnh - 46.01.104.151
-</value>
-  </data>
 </root>

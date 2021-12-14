@@ -29,18 +29,12 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinSanPham));
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.pnlThongTin = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,7 +44,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            this.pnlThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,17 +56,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(912, 234);
             this.panel6.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(567, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(326, 38);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Lý Thuyết Đồ Thị  và Ứng Dụng - 2111COMP1701\r\n©Copyright 2021 HCMUE I_Lalisa_4";
             // 
             // label7
             // 
@@ -114,7 +96,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label6);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 416);
             this.panel3.Name = "panel3";
@@ -130,55 +111,9 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.panel4.Size = new System.Drawing.Size(929, 1);
             this.panel4.TabIndex = 4;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(12, 23);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(884, 38);
-            this.label13.TabIndex = 0;
-            this.label13.Text = resources.GetString("label13.Text");
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(836, 38);
-            this.label5.TabIndex = 0;
-            this.label5.Text = resources.GetString("label5.Text");
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 125);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(370, 95);
-            this.label4.TabIndex = 1;
-            this.label4.Text = resources.GetString("label4.Text");
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 220);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(846, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "       Nhóm chúng em xin chân thành gửi lời cảm ơn đến hai thầy đã giúp đỡ chúng " +
-    "em trong quá trình học môn Lý thuyết đồ thị và ứng dụng.\r\n";
-            // 
             // pnlThongTin
             // 
             this.pnlThongTin.AutoScroll = true;
-            this.pnlThongTin.Controls.Add(this.label3);
-            this.pnlThongTin.Controls.Add(this.label4);
-            this.pnlThongTin.Controls.Add(this.label5);
-            this.pnlThongTin.Controls.Add(this.label13);
             this.pnlThongTin.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlThongTin.Location = new System.Drawing.Point(0, 115);
             this.pnlThongTin.Name = "pnlThongTin";
@@ -261,8 +196,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.pnlThongTin.ResumeLayout(false);
-            this.pnlThongTin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -272,15 +205,10 @@ namespace LTDT_DoAnCuoiKi_Lalisa
 
         #endregion
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
