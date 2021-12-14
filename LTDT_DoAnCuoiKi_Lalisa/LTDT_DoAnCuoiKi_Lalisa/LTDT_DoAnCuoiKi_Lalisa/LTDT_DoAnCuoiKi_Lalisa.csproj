@@ -111,5 +111,8 @@
   <ItemGroup>
     <None Include="Resources\CNTT.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_HCMUP1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

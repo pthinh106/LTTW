@@ -44,9 +44,9 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.iconcurrentChildform = new FontAwesome.Sharp.IconPictureBox();
             this.pnlShadow = new System.Windows.Forms.Panel();
             this.pnlDesktop = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoHCMUE)).BeginInit();
@@ -253,13 +253,18 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.pnlDesktop.Size = new System.Drawing.Size(1007, 604);
             this.pnlDesktop.TabIndex = 3;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(129, 474);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 15);
-            this.label3.TabIndex = 3;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(156, 342);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(761, 80);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "                Khoa Công Nghệ Thông Tin\r\nMô Phỏng Các Thuật Toán của Lý Thuyết Đ" +
+    "ồ Thị\r\n";
             // 
             // pictureBox1
             // 
@@ -272,18 +277,13 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // label3
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(222, 343);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(559, 62);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "                Khoa Công Nghệ Thông Tin\r\nMô Phỏng Các Thuật Toán của Lý Thuyết Đ" +
-    "ồ Thị\r\n";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(129, 474);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 15);
+            this.label3.TabIndex = 3;
             // 
             // Form1
             // 

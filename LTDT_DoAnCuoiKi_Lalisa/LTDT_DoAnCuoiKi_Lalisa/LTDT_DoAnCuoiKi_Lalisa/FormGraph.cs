@@ -99,11 +99,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 pnlCachDuyet.Visible = true;
                 btnDuyet.Padding = new Padding(50, 0, 40, 0);
             }
-            else
-            {
-                btnDuyet.Padding = new Padding(40, 0, 40, 0);
-                pnlCachDuyet.Visible = false;
-            }
             btnDuyet.Text = cbxChucNang.Text;
             Xacnhan = false;
         }

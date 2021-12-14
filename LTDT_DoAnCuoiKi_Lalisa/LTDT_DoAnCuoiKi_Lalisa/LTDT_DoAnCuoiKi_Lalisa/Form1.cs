@@ -152,7 +152,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
 
         private void btnThongTin_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBcolors.color3);
+            ActivateButton(sender, RGBcolors.color1);
             openChildForm(new ThongTinSanPham());
             panelMenu.BorderStyle = BorderStyle.FixedSingle;
         }

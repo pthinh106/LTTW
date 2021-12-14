@@ -117,4 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Chương trình mô phỏng các thuật toán: tìm thành phần liên thông, duyệt cây khung theo chiều rộng (BFS), duyệt cây khung theo chiều sâu (DFS),
+tìm cây khung nhỏ nhất bằng hai thuật toán Kruskal và Prim, tìm đường đi ngắn nhất bằng Dijkstra giúp cho người dùng có cái nhìn trực quan hơn 
+về các thuật toán trên trong học phần Lý thuyết đồ thị và ứng dụng.
+</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Các thành viên trong nhóm thực hiện gồm:
+1. Nguyễn Phước Thịnh - 46.01.104.176
+2. Nguyễn Đạt Minh - 46.01.104.100
+3. Lâm Chấn Huy - 46.01.104.069
+4. Lê Đình Anh Tuấn - 46.01.104.209
+Giảng Viên Hướng Dẫn: ThS.Võ Tiến An
+Học Phần: Lập Trình Window
+Lớp Học Phần : COMP101904
+
+</value>
+  </data>
 </root>
