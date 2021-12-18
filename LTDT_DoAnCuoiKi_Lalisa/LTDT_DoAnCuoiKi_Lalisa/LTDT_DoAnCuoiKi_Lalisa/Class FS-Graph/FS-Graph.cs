@@ -18,6 +18,10 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
         private int tongsocanh = 0;
         Graph[] DSCanh = new Graph[100];
         Graph canhtam = new Graph();
+        // 
+        bool[] ThuocT = new bool[20];
+        int[] Length = new int[20];
+        int[] LastV = new int[20];
 
         struct Graph
         {
@@ -341,6 +345,66 @@ namespace LTDT_DoAnCuoiKi_Lalisa.Class_FS_Graph
                     kq += T[i].u.ToString() + T[i].v.ToString();
                 }
             }
+            return kq;
+        }
+        //
+        public void Dijkstra(int s, int f)
+        {
+            int v = s;
+            int t = s;
+            //
+            for (int i = 0; i < sodinh; i++)
+            {
+                ThuocT[i] = true;
+                Length[i] = -1; // VoCuc
+                LastV[i] = -1;
+            }
+            Length[s] = 0;
+            ThuocT[s] = false;
+            LastV[s] = s;
+            //
+            while (ThuocT[f])
+            {
+                for (int k = 0; k < sodinh; k++)
+                {
+                    if (a[v, k] != 0 && ThuocT[k] == true && (Length[k] == -1 || Length[k] > Length[v] + a[v, k]))
+                    {
+                        Length[k] = Length[v] + a[v, k];
+                        LastV[k] = v;
+                    }
+                }
+                v = -1;
+                for (int i = 0; i < sodinh; i++)
+                {
+                    if (ThuocT[i] == true && Length[i] != -1)
+                        if (v == -1 || Length[v] > Length[i])
+                        {
+                            v = i;
+                        }
+                }
+                ThuocT[v] = false;
+            }
+        }
+        public string Xuat(int s, int f)
+        {
+            string kq = string.Empty;
+            Dijkstra(s, f);
+            int[] DuongDi = new int[20];
+            int v = f, i;
+
+            int id = 0;
+            while (v != s)
+            {
+                DuongDi[id] = v;
+                v = LastV[v];
+                id++;
+            }
+            DuongDi[id] = s;
+            for (i = id; i > 0; i--)
+            {
+                kq += DuongDi[i];
+            }
+            kq += DuongDi[i];
             return kq;
         }
     }

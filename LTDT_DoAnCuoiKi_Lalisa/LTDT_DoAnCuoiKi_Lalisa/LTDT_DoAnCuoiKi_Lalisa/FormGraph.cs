@@ -34,6 +34,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         private string FS1 = string.Empty;
         private string Prim = string.Empty;
         private string Kruskal = string.Empty;
+        private string Dijkstra = string.Empty;
         private string[] TPLT = new string[] { };
         private int i = 0;
         private int dem = 0;
@@ -66,7 +67,6 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         //1. Thay Đổi Trạng Thái Button Thêm Đỉnh
         private void btnThemDinh_Click(object sender, EventArgs e)
         {
-
             if (Checkiconbtn == false)
             {
                 ActivateButton(sender);
@@ -82,7 +82,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         //2. Thay Đổi Text Button Duyệt Theo Chức Năng
         private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (cbxChucNang.Text == "Duyệt BFS" || cbxChucNang.Text == "Duyệt DFS")
+            if (cbxChucNang.Text == "Duyệt BFS" || cbxChucNang.Text == "Duyệt DFS" || cbxChucNang.Text == "Dijkstra")
             {
                 pnlFS.Visible = true;
                 pnlCachDuyet.Visible = true;
@@ -94,7 +94,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 pnlCachDuyet.Visible = false;
                 pnlFS.Visible = false;
             }
-            if(cbxChucNang.Text == "Prim" || cbxChucNang.Text == "Kruskal" || cbxChucNang.Text == "Disjktra" && (cbxChucNang.Text != "Duyệt BFS" || cbxChucNang.Text != "Duyệt DFS"))
+            if(cbxChucNang.Text == "Prim" || cbxChucNang.Text == "Kruskal" || cbxChucNang.Text == "Dijkstra" && (cbxChucNang.Text != "Duyệt BFS" || cbxChucNang.Text != "Duyệt DFS"))
             {
                 pnlCachDuyet.Visible = true;
                 btnDuyet.Padding = new Padding(50, 0, 40, 0);
@@ -221,7 +221,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         //5. Button Vẽ Cạnh 
         private void btnThemCanh_Click(object sender, EventArgs e)
         {
-            if(txtTrongSo.Text == "0" && cbxChucNang.Text != "Disjktra")
+            if(txtTrongSo.Text == "0" && cbxChucNang.Text != "Dijkstra")
             {
                 MessageBox.Show("Trọng số bằng 0 không thể vẽ cạnh", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Egdes = new Class_FS_Graph.Egde();
@@ -441,6 +441,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             FS1 = string.Empty;
             Prim = string.Empty;
             Kruskal = string.Empty;
+            Dijkstra = string.Empty; 
             dem = 0;
             btncreate = null;
             Dothi.readGRAPH(Matrix, sodinh);
@@ -461,7 +462,11 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 getcaykhung(Kruskal);
                 i = 0;
             }
-            
+            if(Dijkstra != string.Empty)
+            {
+                getDD2(Dijkstra);
+                i = 0;
+            }
             dx = dy = dx1 = dy1 = 0;
             Dinh1 = Dinh2 = -1;
             d1 = d2 = -1;
@@ -588,7 +593,70 @@ namespace LTDT_DoAnCuoiKi_Lalisa
 
             //FS_LT
 
-            if (cbxChucNang.Text == "Duyệt BFS" && cbxCachDuyet.Text == "Duyệt Toàn Bộ" && txtDinhKetThuc.Text != string.Empty && txtDinhBatDau.Text != string.Empty)
+            if (cbxChucNang.Text == "Dijkstra" && cbxCachDuyet.Text == "Duyệt Toàn Bộ" && txtDinhKetThuc.Text != string.Empty && txtDinhBatDau.Text != string.Empty)
+            {
+                if (Dijkstra == string.Empty)
+                {
+                    /*txtKetqua.Text = "Không có đường đi";*/
+                    MessageBox.Show("Không có đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    string trave = "";
+                    for (int i = 0; i <Dijkstra.Length; i++)
+                    {
+                        if (i != Dijkstra.Length - 1)
+                        {
+                            trave += Dijkstra[i].ToString() + " --> ";
+                        }
+                        else
+                        {
+                            trave += Dijkstra[i].ToString();
+                        }
+                    }
+                    txtKetqua.Text = trave;
+                    DanhDauDuongDiTB();
+                    return;
+                }
+
+            }
+            else
+            {
+                if (cbxChucNang.Text == "Dijkstra" && cbxCachDuyet.Text == "Duyệt Từng Bước" && txtDinhKetThuc.Text != string.Empty && txtDinhBatDau.Text != string.Empty)
+                {
+                    if (Dijkstra == string.Empty)
+                    {
+                        MessageBox.Show("Không có đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        /*txtKetqua.Text = "Không có đường đi";*/
+                        return;
+                    }
+                    else
+                    {
+                        if (i == 0)
+                        {
+
+                            FS1 += Dijkstra[i].ToString();
+                            i++;
+                        }
+                        else
+                        {
+                            if (i < Dijkstra.Length)
+                            {
+                                FS1 += " --> " + Dijkstra[i].ToString();
+                                i++;
+                            }
+
+                        }
+                        txtKetqua.Text = FS1;
+                        if (dem != Egl.Count && i > 1)
+                        {
+                            DanhDauDuongDiTB2();
+                            dem = dem + 1;
+                        }
+                    }
+                }
+            }if (cbxChucNang.Text == "Duyệt BFS" && cbxCachDuyet.Text == "Duyệt Toàn Bộ" && txtDinhKetThuc.Text != string.Empty && txtDinhBatDau.Text != string.Empty)
             {
                 if (FS == string.Empty)
                 {
@@ -1129,17 +1197,13 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                     DrawArrowhead(dc, BlackPen, NodeG.x, NodeG.y, NodeG.z, NodeG.t);
                     int x = (NodeG.x + NodeG.z) / 2;
                     int y = (NodeG.y + NodeG.t) / 2;
-
                     SolidBrush sb = new SolidBrush(Color.FromArgb(241, 175, 0));
                     dc.FillEllipse(sb, x - 15, y - 15, 30, 30);
-
                     using (StringFormat sf = new StringFormat())
                     {
                         sf.Alignment = StringAlignment.Center;
                         sf.LineAlignment = StringAlignment.Center;
-
                         Panel pnlDraw = new Panel();
-
                         dc.DrawString($"{NodeG.trongso}", pnlDraw.Font, new SolidBrush(Color.Black), x, y, sf);
                     }
 
@@ -1327,7 +1391,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             }
         }
         //13. Vẽ Liên Thông
-        private void VeDoThiLT(Class_FS_Graph.Egde NodeG,Pen pen)
+        private void VeDoThiLT(Class_FS_Graph.Egde NodeG, Pen pen)
         {
             if (cbxLoaiDoThi.Text == "Đồ Thị Vô Hướng")
             {
@@ -1335,6 +1399,17 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 Graphics dc = pnlVeDoThi.CreateGraphics();
                 dc.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 dc.DrawLine(pen, NodeG.x, NodeG.y, NodeG.z, NodeG.t);
+                int x = (NodeG.x + NodeG.z) / 2;
+                int y = (NodeG.y + NodeG.t) / 2;
+                SolidBrush sb = new SolidBrush(Color.FromArgb(241, 175, 0));
+                dc.FillEllipse(sb, x - 15, y - 15, 30, 30);
+                using (StringFormat sf = new StringFormat())
+                {
+                    sf.Alignment = StringAlignment.Center;
+                    sf.LineAlignment = StringAlignment.Center;
+                    Panel pnlDraw = new Panel();
+                    dc.DrawString($"{NodeG.trongso}", pnlDraw.Font, new SolidBrush(Color.Black), x, y, sf);
+                }
             }
             else
             {
@@ -1344,10 +1419,22 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                     dc.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                     dc.DrawLine(pen, NodeG.x, NodeG.y, NodeG.z, NodeG.t);
                     DrawArrowhead(dc, pen, NodeG.x, NodeG.y, NodeG.z, NodeG.t);
-                }
+                    int x = (NodeG.x + NodeG.z) / 2;
+                    int y = (NodeG.y + NodeG.t) / 2;
+                    SolidBrush sb = new SolidBrush(Color.FromArgb(241, 175, 0));
+                    dc.FillEllipse(sb, x - 15, y - 15, 30, 30);
+                    using (StringFormat sf = new StringFormat())
+                    {
+                        sf.Alignment = StringAlignment.Center;
+                        sf.LineAlignment = StringAlignment.Center;
+                        Panel pnlDraw = new Panel();
+                        dc.DrawString($"{NodeG.trongso}", pnlDraw.Font, new SolidBrush(Color.Black), x, y, sf);
+                    }
 
+                }
             }
-        }
+        
+         }
         //14. Vẽ Thành Phần Liên Thông
         private void ResetLT(Pen a)
         {
@@ -1397,8 +1484,16 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                                 Prim = Dothi.PrimMin();
                             }
                             else
-                            {
-                                MessageBox.Show("Vui lòng kiểm tra lại dữ liệu đầu vào", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            {   
+                                if(cbxChucNang.Text == "Dijkstra" && Int32.TryParse(txtDinhBatDau.Text, out PtuxoaNod) && Int32.TryParse(txtDinhKetThuc.Text, out PtuxoaNod))
+                                {
+                                    Dijkstra = Dothi.Xuat(Convert.ToInt32(txtDinhBatDau.Text), Convert.ToInt32(txtDinhKetThuc.Text));
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Vui lòng kiểm tra lại dữ liệu đầu vào", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                                
                             }
                         }
                     }
@@ -1426,7 +1521,19 @@ namespace LTDT_DoAnCuoiKi_Lalisa
         //cmt
 
         //2. Lấy Đường Đi BFS hoặc DFS
-        private void getDD(string a)
+        private void getDD2(string a)
+        {
+            for (int i = 0; i <a.Length-1; i++)
+            {
+                Eg.x = ListarrNod[(int)a[i] - '0'].x + 12;
+                Eg.y = ListarrNod[(int)a[i] - '0'].y + 12;
+                Eg.z = ListarrNod[(int)a[i + 1] - '0'].x + 12;
+                Eg.t = ListarrNod[(int)a[i + 1] - '0'].y + 12;
+                Eg.trongso = Matrix[(int)a[i] - '0', (int)a[i + 1] - '0'];
+                Egl.Add(Eg);
+                Eg = new Class_FS_Graph.Egde();
+            }
+        }private void getDD(string a)
         {
             for (int i = a.Length - 1; i > 0; i--)
             {
@@ -1434,7 +1541,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 Eg.y = ListarrNod[(int)a[i] - '0'].y + 12;
                 Eg.z = ListarrNod[(int)a[i - 1] - '0'].x + 12;
                 Eg.t = ListarrNod[(int)a[i - 1] - '0'].y + 12;
-                Eg.trongso = Matrix[(int)a[i], (int)a[i - 1]];
+                Eg.trongso = Matrix[(int)a[i] - '0', (int)a[i - 1] - '0'];
                 Egl.Add(Eg);
                 Eg = new Class_FS_Graph.Egde();
             }

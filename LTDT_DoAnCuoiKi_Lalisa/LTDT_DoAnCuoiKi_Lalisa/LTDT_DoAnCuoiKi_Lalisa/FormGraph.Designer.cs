@@ -366,7 +366,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
             this.cbxChucNang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxChucNang.FormattingEnabled = true;
             this.cbxChucNang.Items.AddRange(new object[] {
-            "Disjktra",
+            "Dijkstra",
             "Kruskal",
             "Prim",
             "Duyệt BFS",
