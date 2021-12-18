@@ -348,17 +348,17 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 MessageBox.Show("Vui lòng chọn chức năng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (cbxCachDuyet.Text == string.Empty && (cbxChucNang.Text == "Duyệt BFS" || cbxChucNang.Text == "Duyệt DFS"))
+            if (cbxCachDuyet.Text == string.Empty && (cbxChucNang.Text == "Duyệt BFS" || cbxChucNang.Text == "Duyệt DFS" || cbxChucNang.Text == "Dijkstra"))
             {
                 MessageBox.Show("Vui lòng chọn cách duyệt", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if ((cbxChucNang.Text == "Duyệt BFS" || cbxChucNang.Text == "Duyệt DFS") && (txtDinhBatDau.Text == string.Empty || txtDinhKetThuc.Text == String.Empty))
+            if ((cbxChucNang.Text == "Duyệt BFS" || cbxChucNang.Text == "Duyệt DFS" || cbxChucNang.Text == "Dijkstra") && (txtDinhBatDau.Text == string.Empty || txtDinhKetThuc.Text == String.Empty))
             {
                 MessageBox.Show("Bạn chưa nhập đỉnh bắt đầu hoặc đỉnh kết thúc", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (cbxChucNang.Text == "Duyệt BFS" || cbxChucNang.Text == "Duyệt DFS")
+            if (cbxChucNang.Text == "Duyệt BFS" || cbxChucNang.Text == "Duyệt DFS"||cbxChucNang.Text == "Dijkstra")
             {
                 if(Int32.TryParse(txtDinhBatDau.Text, out num) && Int32.TryParse(txtDinhKetThuc.Text, out num))
                 {
@@ -370,7 +370,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                     return;
                 }
             }
-            if (cbxChucNang.Text == "Duyệt DFS" || cbxChucNang.Text == "Duyệt BFS")
+            if (cbxChucNang.Text == "Duyệt DFS" || cbxChucNang.Text == "Duyệt BFS" || cbxChucNang.Text == "Dijkstra")
             {
                 if (Convert.ToInt32(txtDinhBatDau.Text) >= ListarrNod.Count || Convert.ToInt32(txtDinhKetThuc.Text) >= ListarrNod.Count || Convert.ToInt32(txtDinhBatDau.Text) < 0 || Convert.ToInt32(txtDinhKetThuc.Text) < 0)
                 {
@@ -500,7 +500,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 if (Prim == string.Empty)
                 {
                     /*txtKetqua.Text = "Không có đường đi";*/
-                    MessageBox.Show("Không có đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Không có cây khung", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else
@@ -522,7 +522,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 {
                     if (Prim == string.Empty)
                     {
-                        MessageBox.Show("Không có đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Không có cây khung", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         /*txtKetqua.Text = "Không có đường đi";*/
                         return;
                     }
@@ -548,7 +548,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 if (Kruskal == string.Empty)
                 {
                     /*txtKetqua.Text = "Không có đường đi";*/
-                    MessageBox.Show("Không có đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Không có cây khung", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else
@@ -570,7 +570,7 @@ namespace LTDT_DoAnCuoiKi_Lalisa
                 {
                     if (Kruskal == string.Empty)
                     {
-                        MessageBox.Show("Không có đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Không có cây khung", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         /*txtKetqua.Text = "Không có đường đi";*/
                         return;
                     }
