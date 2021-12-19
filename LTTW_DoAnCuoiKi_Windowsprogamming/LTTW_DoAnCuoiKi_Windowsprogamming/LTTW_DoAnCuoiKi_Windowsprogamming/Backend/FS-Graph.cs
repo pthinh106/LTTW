@@ -294,6 +294,11 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming.Backend
             string kq = string.Empty;
             int _nT = 0;
             int[] Nhan = new int[100];
+            this.xetLT();
+            if (this.nTPLT > 1)
+            {
+                return kq;
+            }
             for (int i = 0; i < this.sodinh; i++)
             {
                 for (int j = 0; j < this.sodinh; j++)
@@ -389,6 +394,11 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming.Backend
         public string Xuat(int s, int f)
         {
             string kq = string.Empty;
+            this.xetLT();
+            if (this.nTPLT > 1)
+            {
+                return kq;
+            }
             Dijkstra(s, f);
             int[] DuongDi = new int[20];
             int v = f, i;

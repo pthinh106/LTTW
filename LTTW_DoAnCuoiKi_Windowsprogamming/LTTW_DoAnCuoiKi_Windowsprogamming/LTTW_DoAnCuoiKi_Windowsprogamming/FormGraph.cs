@@ -50,7 +50,7 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
         {
             InitializeComponent();
             rightBorderBtn = new Panel();
-            rightBorderBtn.Size = new Size(7, 37);
+            rightBorderBtn.Size = new Size(7, 42);
             panelClickSukien.Controls.Add(rightBorderBtn);
             btnThemCanh.Enabled = false;
         }
@@ -249,7 +249,6 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
         //6. Button Xóa Cạnh 
         private void btnXoaCanh_Click(object sender, EventArgs e)
         {
-            
             if (ListarrEgde.Count == 0)
             {
                 MessageBox.Show("Không còn cạnh nào để xóa","Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -273,7 +272,6 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
             {
                 if (cbxLoaiDoThi.Text == "Đồ Thị Vô Hướng")
                 {
-
                     if (!ListarrEgde[i].SoSanhEgdeVH(Egdes))
                     {
                         VeDoThi1(ListarrEgde[i]);
@@ -284,12 +282,10 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
                         i = i - 1;
                         Matrix[d1, d2] = 0;
                         Matrix[d2, d1] = 0;
-                        /*d1 = d2 = -1;*/
                     }
                 }
                 if (cbxLoaiDoThi.Text == "Đồ Thị Có Hướng")
                 {
-
                     if (!ListarrEgde[i].SoSanhEgdeCH(Egdes))
                     {
                         VeDoThi1(ListarrEgde[i]);
@@ -304,12 +300,8 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
                     {
                         CheckHuong = ListarrEgde[i].CheckHuong(Egdes);
                     }
-
-
                 }
-                /*s += ListarrEgde[i].x.ToString() + " " + ListarrEgde[i].y.ToString() + " " + ListarrEgde[i].z.ToString() + " " + ListarrEgde[i].t.ToString() + Environment.NewLine;*/
             }
-            /*m += Environment.NewLine+ Nod.x.ToString() + " " + Nod.y.ToString() + " " + Nod.z.ToString() + " " + Nod.t.ToString()+ Environment.NewLine;*/
             if (ListarrEgde.Count > 0)
             {
                 if (cbxLoaiDoThi.Text == "Đồ Thị Có Hướng" && (CheckHuong || n == ListarrEgde.Count))
@@ -322,11 +314,6 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
                     MessageBox.Show("Không tồn tại đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            /* for (int i = 0; i < ListarrEgde.Count; i++)
-             {
-                 n += ListarrEgde[i].x.ToString() + " " + ListarrEgde[i].y.ToString() + " " + ListarrEgde[i].z.ToString() + " " + ListarrEgde[i].t.ToString() + Environment.NewLine;
-             }*/
-            /*txtKetqua.Text = ListarrEgde.Count.ToString() + "  " + s + "    " + n + " " + PtuXoa.ToString();*/
             Egdes = new Backend.Egde();
             Nod = new Backend.NodeGraph();
             btncreate = null;
@@ -1533,7 +1520,10 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
                 Egl.Add(Eg);
                 Eg = new Backend.Egde();
             }
-        }private void getDD(string a)
+        }
+
+
+        private void getDD(string a)
         {
             for (int i = a.Length - 1; i > 0; i--)
             {
