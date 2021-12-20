@@ -585,7 +585,7 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
                 if (Dijkstra == string.Empty)
                 {
                     /*txtKetqua.Text = "Không có đường đi";*/
-                    MessageBox.Show("Không có đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Đồ thị không liên thông nên không tìm được đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else
@@ -614,7 +614,7 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
                 {
                     if (Dijkstra == string.Empty)
                     {
-                        MessageBox.Show("Không có đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Đồ thị không liên thông nên không tìm được đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         /*txtKetqua.Text = "Không có đường đi";*/
                         return;
                     }
