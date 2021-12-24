@@ -984,7 +984,7 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
         //2. Vẽ Cạnh 
         private void VeDoThi(Backend.Egde NodeG)
         {
-            if(ListarrEgde.Count > 0 && check(Dinh1, Dinh2))
+            if(check1(Dinh1, Dinh2))
             {
                 if (Matrix[Dinh1, Dinh2] != 0 && cbxLoaiDoThi.Text == "Đồ Thị Vô Hướng" && NodeG.CheckEgde())
                 {
@@ -1265,6 +1265,16 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
             if (x >= 0 && y >= 0)
             {
                 return Matrix[x, y] != 1;
+            }
+            else
+            {
+                return false;
+            }
+        }private bool check1(int x, int y)
+        {
+            if (x >= 0 && y >= 0)
+            {
+                return true;
             }
             else
             {
