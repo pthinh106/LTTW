@@ -296,15 +296,15 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
                         i = i - 1;
                         Matrix[d1, d2] = 0;
                     }
-                    if (!CheckHuong && ListarrEgde.Count >= 0)
-                    {
-                        CheckHuong = ListarrEgde[i].CheckHuong(Egdes);
-                    }
+                    if (false ||( !CheckHuong && ListarrEgde.Count >= 0))
+                     {
+                            CheckHuong = ListarrEgde[i].CheckHuong(Egdes);
+                     }
                 }
             }
             if (ListarrEgde.Count > 0)
             {
-                if (cbxLoaiDoThi.Text == "Đồ Thị Có Hướng" && (CheckHuong || n == ListarrEgde.Count))
+                if (cbxLoaiDoThi.Text == "Đồ Thị Có Hướng" &&  n == ListarrEgde.Count)
                 {
                     MessageBox.Show("Không tồn tại đường đi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -1008,9 +1008,9 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
 
                         dc.DrawString($"{NodeG.trongso}", pnlDraw.Font, new SolidBrush(Color.Black), x, y, sf);
                     }
-                    ListarrEgde.Add(NodeG);
                     Matrix[Dinh1, Dinh2] = NodeG.trongso;
                     Matrix[Dinh2, Dinh1] = NodeG.trongso;
+                    return;
                 }
                 else if (Matrix[Dinh1, Dinh2] != 0 && cbxLoaiDoThi.Text == "Đồ Thị Có Hướng" && NodeG.CheckEgde())
                 {
@@ -1034,8 +1034,8 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
 
                         dc.DrawString($"{NodeG.trongso}", pnlDraw.Font, new SolidBrush(Color.Black), x, y, sf);
                     }
-                    ListarrEgde.Add(NodeG);
                     Matrix[Dinh1, Dinh2] = NodeG.trongso;
+                    return;
                 }
             }
             if (cbxLoaiDoThi.Text == "Đồ Thị Vô Hướng" && NodeG.CheckEgde() && check(Dinh1, Dinh2))
@@ -1067,7 +1067,8 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
                 ListarrEgde.Add(NodeG);
                 Matrix[Dinh1, Dinh2] = NodeG.trongso;
                 Matrix[Dinh2, Dinh1] = NodeG.trongso;
-                
+                return;
+
             }
             else
             {
@@ -1100,6 +1101,7 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
                     }
                     ListarrEgde.Add(NodeG);
                     Matrix[Dinh1, Dinh2] = NodeG.trongso;
+                    return;
                 }
             }
         }
