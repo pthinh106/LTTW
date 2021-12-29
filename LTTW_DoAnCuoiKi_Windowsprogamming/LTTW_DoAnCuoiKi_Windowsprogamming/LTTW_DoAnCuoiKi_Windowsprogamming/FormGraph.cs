@@ -296,7 +296,7 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
                         i = i - 1;
                         Matrix[d1, d2] = 0;
                     }
-                    if (false ||( !CheckHuong && ListarrEgde.Count >= 0))
+                    if (false ||( !CheckHuong && ListarrEgde.Count >= 1))
                      {
                             CheckHuong = ListarrEgde[i].CheckHuong(Egdes);
                      }
@@ -1010,6 +1010,15 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
                     }
                     Matrix[Dinh1, Dinh2] = NodeG.trongso;
                     Matrix[Dinh2, Dinh1] = NodeG.trongso;
+                    for (int i = 0; i < ListarrEgde.Count; i++)
+                    {
+                        if (ListarrEgde[i].SoSanhEgdeVH(NodeG))
+                        {
+                            ListarrEgde[i].trongso = NodeG.trongso;
+                            break;
+                        }
+                            
+                    }
                     return;
                 }
                 else if (Matrix[Dinh1, Dinh2] != 0 && cbxLoaiDoThi.Text == "Đồ Thị Có Hướng" && NodeG.CheckEgde())
@@ -1035,6 +1044,15 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
                         dc.DrawString($"{NodeG.trongso}", pnlDraw.Font, new SolidBrush(Color.Black), x, y, sf);
                     }
                     Matrix[Dinh1, Dinh2] = NodeG.trongso;
+                    for (int i = 0; i < ListarrEgde.Count; i++)
+                    {
+                        if (ListarrEgde[i].SoSanhEgdeCH(NodeG))
+                        {
+                            ListarrEgde[i].trongso = NodeG.trongso;
+                            break;
+                        }
+
+                    }
                     return;
                 }
             }
@@ -1043,7 +1061,7 @@ namespace LTTW_DoAnCuoiKi_WindowsProgamming
                 Graphics dc = pnlVeDoThi.CreateGraphics();
                 dc.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 Pen BlackPen = new Pen(Color.Black, 2);
-                dc.DrawLine(BlackPen, NodeG.x, NodeG.y, NodeG.z, NodeG.t);
+                dc.DrawArc(BlackPen, NodeG.x, NodeG.y, NodeG.z, NodeG.t,45,46);
                 dx = dy = dx1 = dy1 = 0;
                 if(txtTrongSo.Text != String.Empty)
                 {
